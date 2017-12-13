@@ -52,8 +52,10 @@ git commit -m 'Initial commit (created by puppet-module-creator)'
 git push origin master
 
 
+##
 echo "[[ Done ]]"
 echo 
+##
 
 echo "Add this to the Puppetfile:"
 echo "###################################################################################"
