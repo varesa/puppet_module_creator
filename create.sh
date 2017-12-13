@@ -23,6 +23,7 @@ echo
 echo "Created repository $( echo "$response" | jq '.web_url' )"
 echo
 
+
 ##
 echo "[[ Cloning repository ]]"
 echo
@@ -32,8 +33,10 @@ cd $basedir
 git clone $( echo "$response" | jq '.ssh_url_to_repo' | tr -d '"')
 
 
+##
 echo "[[ Making initial commit ]]"
 echo
+##
 
 cd $modulename
 mkdir manifests
@@ -47,6 +50,7 @@ EOS
 git add manifests/init.pp
 git commit -m 'Initial commit (created by puppet-module-creator)'
 git push origin master
+
 
 echo
 echo "Done."
