@@ -3,7 +3,8 @@
 set -euo pipefail
 
 modulename="$1"
-basedir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
+mydir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+basedir="$mydir/.."
 
 
 ##
@@ -11,7 +12,7 @@ echo "[[ Creating repository for $modulename ]]"
 echo
 ##
 
-gitlab_token=$(cat gitlab_token)
+gitlab_token=$(cat $mydir/gitlab_token)
 gitlab_url="http://gitlab.tre.esav.fi"
 gitlab_namespace_id="4"
 
